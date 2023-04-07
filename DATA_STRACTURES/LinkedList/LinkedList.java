@@ -1,11 +1,12 @@
 package LinkedList;
+
 import java.util.Arrays;
 
 public class LinkedList<T> {
     Node<T> head;
 
     // get head
-    public Node<T> getHead(){
+    public Node<T> getHead() {
         return head;
     }
 
@@ -22,8 +23,8 @@ public class LinkedList<T> {
 
         if (head == null) {
             head = newNode;
-        } 
-        
+        }
+
         else {
             Node<T> temp = head;
             while (temp.getNext() != null) {
@@ -63,13 +64,12 @@ public class LinkedList<T> {
         }
     }
 
-
     // remove given value from list
     public void removeGivenValue(T data) {
         if (head == null) {
             System.out.println("List is empty");
-        } 
-        
+        }
+
         else {
             Node<T> temp = head;
             Node<T> prev = null;
@@ -153,9 +153,7 @@ public class LinkedList<T> {
         }
         return array;
     }
-    
 
-    
     // get value related to the index
     public T getValue(int index) {
         if (head == null) {
@@ -174,7 +172,5 @@ public class LinkedList<T> {
             return null;
         }
     }
-    
+
 }
-
-
