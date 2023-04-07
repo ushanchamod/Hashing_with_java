@@ -1,0 +1,11 @@
+insertAtBeginning(data)
+add(data)
+removeAtBeginning()
+removeAtEnd()
+removeGivenValue(data)
+indexOf(data)
+length()
+
+print()   // return all element in list
+getAsList()
+getValue(index)
