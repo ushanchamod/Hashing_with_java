@@ -2,6 +2,7 @@ package AdvancedArray;
 
 public class AdvancedArray<T> {
     private T[] list;
+
     public AdvancedArray(T[] list){
         this.list = list;
     } 

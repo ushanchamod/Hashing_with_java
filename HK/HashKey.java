@@ -7,15 +7,22 @@ import text_file_control.Txt_write;
 public class HashKey {
     private Object[] words_list;
     private LinkedList<String> purified_word_list;
+    private String outputFileName;
+    private boolean equal_, len_0_;
+    private int row_number = 0;
 
-    final String[] lettersArray = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
-            "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
-            "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
-    AdvancedArray<String> letters = new AdvancedArray<>(lettersArray);
+    AdvancedArray<Character> letters = new AdvancedArray<>(new Character[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+            'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E',
+            'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' });
 
-    public HashKey(Object[] words_list) {
+    public HashKey(Object[] words_list, String outputFileName) {
         this.words_list = words_list;
         this.purified_word_list = new LinkedList<>();
+        this.outputFileName = outputFileName;
+    }
+
+    public int sizeOf(){
+        return purified_word_list.length();
     }
 
     // remove all non-alphabetic characters from the word
@@ -29,8 +36,8 @@ public class HashKey {
 
         for (char letter : arr) {
             boolean needContinue = true;
-            for (String letter2 : letters.getList()) {
-                if (letter == letter2.charAt(0)) {
+            for (Character letter2 : letters.getList()) {
+                if (letter == letter2) {
                     purified_word = purified_word + letter;
                     needContinue = false;
                     break;
@@ -46,8 +53,6 @@ public class HashKey {
     }
 
     // create a list of purified words
-    boolean equal_, len_0_;
-
     private void create_purify_word_list(String purified_word) {
         equal_ = false;
         len_0_ = false;
@@ -70,8 +75,6 @@ public class HashKey {
     }
 
     // create a line for wordsHKn.txt and return it
-    int row_number = 0;
-
     private String create_line_for_HK_txt(Object word) {
         String Line = "";
         String word_ = word.toString();
@@ -83,7 +86,7 @@ public class HashKey {
 
         int sum_of_character_value = 0;
         for (char letter : arr) {
-            int character_value = letters.indexOf(Character.toString(letter));
+            int character_value = letters.indexOf(letter);
             sum_of_character_value = sum_of_character_value + character_value;
         }
 
@@ -103,14 +106,14 @@ public class HashKey {
         }
 
         try {
-            tw.clean();
+            tw.clean(outputFileName);
             for (Object word : purified_word_list.toArray()) {
                 String line = create_line_for_HK_txt(word);
-                tw.write(line, true);
-                tw.write("\n", true);
+                tw.write(line, true, outputFileName);
+                tw.write("\n", true, outputFileName);
             }
 
-            System.out.println("-- Write 'wordsHKn.txt' file successfully....!");
+            System.out.println("-- Write 'wordsHK3.txt' file successfully....!");
 
         } catch (Exception e) {
             System.out.println("Error: " + e);

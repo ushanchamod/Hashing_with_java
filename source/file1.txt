@@ -1,0 +1,18 @@
+The time of flight (ToF) range imaging cameras indirectly measure the time
+taken from the modulation light source to the scene and back to the camera
+and it is this principle that is used in depth cameras to perform depth
+measurements. This thesis is focused on ToF cameras that are based on the
+amplitude modulated continuous wave (AMCW) lidar techniques which measure
+the phase difference between the emitted and reflected light signals. Due
+to their portable size, feasible design, low weight and low energy consumption,
+these cameras have high demand in many applications. Commercially available
+AMCW ToF cameras have relatively high noise levels due to electronic
+sources such as shot noise, reset noise, amplifier noise, crosstalk, analogue to
+digital converters quantization and multipath light interference. Many noise
+sources in these cameras such as harmonic contamination, non-linearity, multipath
+interferences and light scattering are well investigated. In contrast, the
+effect of electronic jitter as a noise source in ranging cameras is barely studied.
+Jitter is defined to be any timing movement with reference to an ideal
+signal. An investigation of the effect of jitter on range imaging is important
+because timing errors potentially could cause errors in measuring phase, thus
+in range.

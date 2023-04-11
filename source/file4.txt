@@ -1,0 +1,18 @@
+But with modulation frequency increases and integration period decreases likely 
+in the near future, periodic jitter may have a measurable detection affect on ranging. 
+The influence of random jitter is also investigated by obtaining an analytical model 
+based on stochastic calculus by using fundamental statistics and Fourier analysis. 
+It is assumed that the random jitter follows the Gaussian distribution.
+Monte Carlo simulation is performed on the model obtained for a 1 ms 
+integration period. We found increasing the modulation frequency above
+approximately 400 MHz with random jitter of 140 ps has a measurable affect
+on ranging. During the last decade, the ToF range imaging cameras have significantly
+improved and have been used in various applications from agricultural sectors
+to engineering industries. With the improvement of the technology to build
+the depth sensor, novel applications of ToF range imaging will increase. At
+present, more researchers are mainly focused on the noise investigation in
+these cameras. However, from this thesis, we found that the jitter significantly
+influences range measurements therefore it is worth further investigating jitter
+in ToF range imaging systems. Several investigations could be extended to
+further perform the ToF range imaging systems due to the jitter influence on
+measurements as follows.

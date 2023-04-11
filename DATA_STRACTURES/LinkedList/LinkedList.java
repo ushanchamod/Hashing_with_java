@@ -108,7 +108,7 @@ public class LinkedList<T> {
     // get length of list
     public int length() {
         if (head == null) {
-            System.out.println("List is empty");
+            // System.out.println("List is empty");
             return 0;
         } else {
             Node<T> temp = head;

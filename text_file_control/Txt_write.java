@@ -3,22 +3,24 @@ package text_file_control;
 import java.io.FileWriter;
 
 public class Txt_write {
-    public Txt_write() {
+    private String file_path;
 
+    public Txt_write() {
+        file_path = "outputs/";
     }
 
-    public void write(String text, boolean append) {
-        try (FileWriter fw = new FileWriter("outputs/wordsHKn.txt", append)) {
+    public void write(String text, boolean append, String fileName) {
+        
+        try (FileWriter fw = new FileWriter(file_path + fileName, append)) {
             fw.write(text);
         } catch (Exception e) {
             System.out.println("Error: " + e);
         }
     } // End of fileWrite method
 
-    public void clean() {
-        try (FileWriter fw = new FileWriter("outputs/wordsHKn.txt")) {
+    public void clean(String fileName) {
+        try (FileWriter fw = new FileWriter(file_path + fileName)) {
             fw.write("");
-            System.out.println("File cleaned successfully");
         } catch (Exception e) {
             System.out.println("Error: " + e);
         }
