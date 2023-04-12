@@ -1,4 +1,5 @@
 package LinkedList;
+
 import java.util.Arrays;
 
 public class LinkedList<T> {

@@ -7,7 +7,9 @@ import text_file_control.Txt_read;
 public class Main {
     public static void main(String[] args) {
 
-        // Task 1
+
+        // -------------------- Task 1 -------------------->
+
         String file_name_for_generate_hk = "file3.txt"; // for first input
         String hash_key_table_output_fileName = "wordsHK3.txt"; // for first output
 
@@ -18,7 +20,10 @@ public class Main {
                 hash_key_table_output_fileName);
         hashKeyObj.generate_wordHK_txt(); // generate word hash key txt file
 
-        // Task 2
+
+
+        // -------------------- Task 2 -------------------->
+
         Txt_read tr2 = new Txt_read();
 
         String file_name_two = "wordsHK3.txt"; // for second input
@@ -27,18 +32,26 @@ public class Main {
         Hash_table hashTable = new Hash_table(tr2.getWordList("outputs/" + file_name_two));
         hashTable.createHashTable(output_of_task_two);
 
-        // Task 3
+
+
+        // -------------------- Task 3 -------------------->
+
         Txt_read tr3 = new Txt_read();
 
         LinkedList<String> list = tr3.getWordList("outputs/" + output_of_task_two);
 
+        // Sort list object
         Sorting sort = new Sorting(list);
-        sort.shortList();
+        sort.shortList(); // call sort list
+        printSortList(list); // print sorted list
 
+    }
+
+    private static void printSortList(LinkedList<String> list) {
         // Print sorted list from wordsQHKn.txt
         for (int i = 0; i < list.length(); i++) {
             String[] line = list.getValue(i).split(",");
-            System.out.println(line[4] + " " + line[1]);
+            System.out.println(line[4] + "\t" + line[1]);
         }
 
     }
