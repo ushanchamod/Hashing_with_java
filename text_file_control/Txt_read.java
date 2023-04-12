@@ -16,11 +16,11 @@ public class Txt_read {
         this.input_file_path = file_path;
         try {
             File f = new File(input_file_path);
-            Scanner sc = new Scanner(f);
-
-            while (sc.hasNext()) {
-                String next_word = sc.next();
-                words_list.add(next_word.strip());
+            try (Scanner sc = new Scanner(f)) {
+                while (sc.hasNext()) {
+                    String next_word = sc.next();
+                    words_list.add(next_word.strip());
+                }
             }
         } catch (Exception e) {
             System.out.println("Error: " + e);

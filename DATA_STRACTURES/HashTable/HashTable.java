@@ -63,7 +63,7 @@ public class HashTable {
     public void printHashTable() {
         for (int i = 0; i < entries.length; i++) {
             if (entries[i] != null) {
-                System.out.println(entries[i] + " " + i);
+                System.out.println(i + " " + entries[i]);
             }
         }
     }

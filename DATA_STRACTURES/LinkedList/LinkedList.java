@@ -1,5 +1,4 @@
 package LinkedList;
-
 import java.util.Arrays;
 
 public class LinkedList<T> {
@@ -8,6 +7,26 @@ public class LinkedList<T> {
     // get head
     public Node<T> getHead() {
         return head;
+    }
+
+    // insert node at given index
+    public void insertAt(int index, Node<T> node) {
+        Node<T> newNode = node;
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node<T> temp = head;
+            int count = 0;
+            while (temp != null) {
+                if (count == index - 1) {
+                    newNode.setNext(temp.getNext());
+                    temp.setNext(newNode);
+                    break;
+                }
+                count++;
+                temp = temp.getNext();
+            }
+        }
     }
 
     // inset at the beginning
@@ -170,6 +189,27 @@ public class LinkedList<T> {
                 temp = temp.getNext();
             }
             return null;
+        }
+    }
+
+    // Swap two nodes
+    public void swap(Node<T> current, Node<T> next) {
+        Node<T> currentNode = current;
+        Node<T> nextNode = next;
+
+        Node<T> temp = head;
+
+        while (temp.getNext() != null) {
+
+            if (temp.getNext() == currentNode) {
+                // System.out.println("Swapping " + currentNode.getData() + " and " + nextNode.getData());
+                temp.setNext(nextNode);
+                currentNode.setNext(nextNode.getNext());
+                nextNode.setNext(currentNode);
+                break;
+            }
+
+            temp = temp.getNext();
         }
     }
 
