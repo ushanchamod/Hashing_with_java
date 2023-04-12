@@ -11,8 +11,9 @@ public class Hash_table {
 
     public Hash_table(LinkedList<String> list) {
         this.size = list.length();
-        hashTable = new HashTable(size);
+        hashTable = new HashTable(size + 8); // +4
         this.list = list;
+        System.out.println("Hash table size: " + size);
     }
 
     public void createHashTable(String outputFileName) {
