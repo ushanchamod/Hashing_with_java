@@ -1,14 +1,15 @@
-import HK.HashKey;
-import HT.Hash_table;
 import LinkedList.LinkedList;
 import SORTING.Sorting;
+import TaskOne.HashKey;
+import TaskTwo.Hash_table;
 import text_file_control.Txt_read;
 
 public class Main {
     public static void main(String[] args) {
 
-        // First number of Reg. number
-        int n = 3;
+        int n = 3; // First number of Reg. number
+
+        
 
         // -------------------- Task 1 -------------------->
 
@@ -42,8 +43,7 @@ public class Main {
 
         LinkedList<String> list = tr3.getWordList("outputs/" + output_of_task_two);
 
-        // Sort list object
-        Sorting sort = new Sorting(list);
+        Sorting sort = new Sorting(list); // Sort list object
         sort.shortList(); // call sort list
         printSortList(list); // print sorted list
 

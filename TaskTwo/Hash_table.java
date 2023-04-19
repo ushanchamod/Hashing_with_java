@@ -1,4 +1,4 @@
-package HT;
+package TaskTwo;
 
 import HashTable.HashTable;
 import LinkedList.LinkedList;
@@ -14,6 +14,7 @@ public class Hash_table {
         this.n = n;
         this.size = list.length();
         hashTable = new HashTable(size + 8); // +4
+
         this.list = list;
         System.out.println("Hash table size: " + size);
     }
@@ -21,9 +22,7 @@ public class Hash_table {
     public void createHashTable(String outputFileName) {
         for (Object x : list.toArray()) {
             words = x.toString().split(",");
-            // hashTable.put(words[2], words[1]);
             hashTable.put(Integer.parseInt(words[2]), words[1]);
-            // System.out.println(words[2] + " " + words[1]);
 
         }
 
