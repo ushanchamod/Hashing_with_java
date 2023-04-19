@@ -5,11 +5,13 @@ import LinkedList.LinkedList;
 
 public class Hash_table {
     int size;
+    int n;
     HashTable hashTable;
     LinkedList<String> list;
     String[] words = null;
 
-    public Hash_table(LinkedList<String> list) {
+    public Hash_table(LinkedList<String> list, int n) {
+        this.n = n;
         this.size = list.length();
         hashTable = new HashTable(size + 8); // +4
         this.list = list;
@@ -25,7 +27,7 @@ public class Hash_table {
 
         }
 
-        hashTable.generateWordQHKnFile("wordsQHK3.txt");
+        hashTable.generateWordQHKnFile("wordsQHK" + n + ".txt");
     }
 
 }

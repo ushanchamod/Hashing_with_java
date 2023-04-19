@@ -7,11 +7,13 @@ import text_file_control.Txt_read;
 public class Main {
     public static void main(String[] args) {
 
+        // First number of Reg. number
+        int n = 3;
 
         // -------------------- Task 1 -------------------->
 
-        String file_name_for_generate_hk = "file3.txt"; // for first input
-        String hash_key_table_output_fileName = "wordsHK3.txt"; // for first output
+        String file_name_for_generate_hk = "file" + n + ".txt"; // for first input
+        String hash_key_table_output_fileName = "wordsHK" + n + ".txt"; // for first output
 
         Txt_read tr = new Txt_read(); // read files object
 
@@ -26,10 +28,10 @@ public class Main {
 
         Txt_read tr2 = new Txt_read();
 
-        String file_name_two = "wordsHK3.txt"; // for second input
-        String output_of_task_two = "wordsQHK3.txt"; // for second output
+        String file_name_two = "wordsHK" + n + ".txt"; // for second input
+        String output_of_task_two = "wordsQHK" + n + ".txt"; // for second output
 
-        Hash_table hashTable = new Hash_table(tr2.getWordList("outputs/" + file_name_two));
+        Hash_table hashTable = new Hash_table(tr2.getWordList("outputs/" + file_name_two), n);
         hashTable.createHashTable(output_of_task_two);
 
 
